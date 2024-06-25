@@ -1,3 +1,4 @@
+#!/usr/bin/env/bash
 # Author: David McFarlane
 # Date: 2024-06-13
 # Version: 1.0
@@ -32,7 +33,7 @@ while getopts ":h" option; do
    esac
 done 
 
-let -i x=$3
+x=$3
 #assign default value to x
 
 x=${x:=1}
@@ -53,7 +54,7 @@ do
     fi
 
     a=""
-    if [ $x -lt 10 ] 
+    if [ "$x" -lt 10 ] 
     then 
         a="0$x"
        # echo $a
@@ -62,7 +63,7 @@ do
       #  echo $a
     fi
 
-    echo $a 
+    echo "$a" 
     x=$((x+1))
     mv -- "$f" "$1_$a.$2"
 done
